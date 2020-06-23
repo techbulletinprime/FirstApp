@@ -1,14 +1,15 @@
 const express=require('express')
 const path=require('path')
 const app=express()
+const port=process.env.PORT || 3000
 app.use(express.static(path.join(__dirname,'./views')))
-//pp.set('views')
-app.get('/abc',(req,res)=>{
 
-    return res.send("Hi")
+app.get('/home',(req,res)=>{
+
+    return res.send("Home Page")
 })
 const validator=require('validator')
-const email='rajanikamta@gmail.com'
+const email='rajani@gmail.com'
 debugger
 console.log(validator.isEmail(email))
-app.listen(3000)
+app.listen(port)
